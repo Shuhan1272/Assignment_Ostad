@@ -6,18 +6,21 @@ import common_function
 Common validation : Space is not allowed between characters in any input fields.
 If space is allowed, then during read data from file to list will arise exception. 
 Due to split separator space has been in use.
+
+Note : Simple validations. Not covered all the cases. 
+
 """
 #name 
 def validate_name(name):
     def alpha_score(name):
-        have_alpha=False
+        has_alpha=False
         for char in name:
             if char.isalpha() or char=='_':
                 if char.isalpha():
-                    have_alpha=True
+                    has_alpha=True
             else:
                 return False
-        return have_alpha and True
+        return has_alpha and True
 
     if(len(name)>0 and alpha_score(name)): #check name is not empty and only contains (A-Z,a-z) [at least one] and/or (_)
         return True
@@ -31,9 +34,9 @@ def validate_name(name):
 #phone number 
 def validate_phn_num(contacts,phone_number):
     
-    matched_index=common_function.get_matched_index(contacts,phone_number)
+    matched_index=common_function.get_matched_index(contacts,phone_number) #search 
 
-    #duplicate number handling
+    #duplicate number checking
     if matched_index!=-1 :
         common_function.show_msg("Number already present. Enter a unique number.")
         return False
@@ -41,12 +44,12 @@ def validate_phn_num(contacts,phone_number):
         return True
     else:
         common_function.show_msg("Invalid input.")
-        print("# 1. At least one digit should present.")
+        print("# 1.At least one digit should present.")
         print("# 2.Only digit allowed. (0-9)")
         print("# 3.For example : 0123456789")
         return False
 
-#email
+#email  
 def validate_email(email):
     if len(email)==0 or (' ' in email): #check email is empty or contains spaces  
         common_function.show_msg("Invalid input.")

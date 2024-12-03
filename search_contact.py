@@ -3,9 +3,9 @@ import common_function
 
 #function for searching contact    
 def search(contacts):
-    #searching for the contact based on phone number  
     common_function.show_header("Search Contact")
-
+    
+    #searching for the contact based on phone number  
     phone_number=input("Enter the phone number : ") #taking input
     matched_index=common_function.get_matched_index(contacts,phone_number) #search
 

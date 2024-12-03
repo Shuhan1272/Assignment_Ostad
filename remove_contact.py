@@ -3,9 +3,9 @@ import common_function
 
 #function  for removing contact 
 def remove(contacts):
-    #searching for the contact want to remove based on phone number
     common_function.show_header("Remove Contact")
 
+    #searching for the contact want to remove based on phone number
     phone_number=input("Enter the phone number : ") #taking input
     matched_index=common_function.get_matched_index(contacts,phone_number) #search 
 
