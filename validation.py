@@ -4,7 +4,7 @@ import common_function
 #input fields validation during add.
 """
 Common validation : Space is not allowed between characters in any input fields.
-If space is allowed, then during read data from file to list will arise exception. 
+If space is allowed, then during read data from file to list will not accurate. 
 Due to split separator space has been in use.
 
 Note : Simple validations. Not covered all the cases. 
