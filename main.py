@@ -11,9 +11,7 @@ contacts=[]
 
 #before start reading data from file to list. 
 save_contacts.read(contacts)
-
-#changes 
- 
+  
 def main_main():
     while(True):
         
